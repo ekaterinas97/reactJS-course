@@ -1,13 +1,28 @@
+.messageArea{
+    display: flex;
+    flex-direction: column;
+}
 .message{
     max-width: 500px;
+    width: 100%;
     margin: 0 auto;
 }
-.messageContainer{
+.messageContainerUser{
     background-color: #555555;
     color: #f9f9f9;
     width: 360px;
     border-radius: 5px;
     margin-bottom: 15px;
+    margin-left: auto;
+    padding: 10px;
+}
+.messageContainerRobot{
+    background-color: #61dafb;
+    color: #555;
+    width: 360px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    margin-right: auto;
     padding: 10px;
 }
 .messageAuthor{

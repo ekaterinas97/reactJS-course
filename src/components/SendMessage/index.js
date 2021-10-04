@@ -9,10 +9,12 @@ export const SendMessage = (props)=>{
     const createMsg= (e)=>{
         e.preventDefault();
         const newMsg = Object.assign({author: 'user'}, {text:`${textInput.current.value}`});
-        props.list.push(newMsg);
+        if(props.onSubmit){
+            props.onSubmit(newMsg);
+        }
+        textInput.current.value='';
 
     }
-
     return <section className={styles.sendMessage} >
         <div className={styles.container}>
             <form className={styles.sendMessageForm} onSubmit={createMsg}>
