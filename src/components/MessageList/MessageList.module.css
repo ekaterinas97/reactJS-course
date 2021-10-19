@@ -1,0 +1,30 @@
+.messageArea{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.messageContainerUser{
+    background-color: #555555;
+    color: #f9f9f9;
+    max-width: 360px;
+    width: 100%;
+    overflow-wrap: break-word;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    margin-left: auto;
+    padding: 10px;
+}
+.messageContainerRobot{
+    background-color: #61dafb;
+    color: #555;
+    width: 360px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    margin-right: auto;
+    padding: 10px;
+}
+.messageAuthor{
+    color: #282c34;
+    font-size: 12px;
+}
