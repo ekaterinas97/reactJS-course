@@ -9,8 +9,6 @@
 }
 
 .sendMessageForm{
-    max-width: 400px;
-    margin: 20px auto;
     width: 100%;
     display: flex;
 }

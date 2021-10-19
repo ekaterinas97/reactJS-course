@@ -1,16 +1,15 @@
 .messageArea{
     display: flex;
     flex-direction: column;
+    height: 100%;
 }
-.message{
-    max-width: 500px;
-    width: 100%;
-    margin: 0 auto;
-}
+
 .messageContainerUser{
     background-color: #555555;
     color: #f9f9f9;
-    width: 360px;
+    max-width: 360px;
+    width: 100%;
+    overflow-wrap: break-word;
     border-radius: 5px;
     margin-bottom: 15px;
     margin-left: auto;

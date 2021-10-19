@@ -1,25 +1,38 @@
-import React, { useRef } from 'react';
+import React, {useEffect, useRef} from 'react';
 import styles from './SendMessage.module.css'
+import {Input, Button, Box} from '@mui/material'
+import SendIcon from "@mui/icons-material/Send";
+import {nanoid} from "nanoid";
 
 
 export const SendMessage = (props)=>{
 
     const textInput = useRef(null);
 
+    useEffect(()=>{
+        textInput.current?.focus();
+    },[]);
+
     const createMsg= (e)=>{
         e.preventDefault();
-        const newMsg = Object.assign({author: 'user'}, {text:`${textInput.current.value}`});
+        const msg ={
+            id: nanoid(),
+            author: 'user',
+        };
+        const newMsg = Object.assign(msg, {text:`${textInput.current.value}`});
         if(props.onSubmit){
             props.onSubmit(newMsg);
         }
         textInput.current.value='';
+        textInput.current?.focus();
 
     }
-    return <section className={styles.sendMessage} >
-        <div className={styles.container}>
+    return <section>
+        <div>
             <form className={styles.sendMessageForm} onSubmit={createMsg}>
-                <input className={styles.sendMessageInput} ref={textInput}  type="text"/>
-                <button type={"submit"}>Отправить</button>
+                    <Input className={styles.sendMessageInput} fullWidth={true} multiline={true} inputRef={textInput} placeholder={`Write a message...`} />
+                    <Button  endIcon={<SendIcon/>}  type={"submit"} />
+
             </form>
         </div>
 
